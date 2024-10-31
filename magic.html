@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic Button</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        #secondButton {
+            display: none; /* Hide the second button initially */
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #d9534f; /* Change color to indicate a prank */
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Magic Show!</h1>
+    <button id="magicButton">Click Button and See Magic</button>
+    <audio id="audio" src="happy_diwali_tkmoc.mp3" preload="auto"></audio> <!-- Audio file -->
+    <button id="secondButton">Sorry, Now See the Magic</button>
+    <div id="message"></div>
+    <div>
+        <p>For more information, contact: <a href="mailto:aayushshiwakoti6@gmail.com">aayushshiwakoti6@gmail.com</a></p>
+        <p>Got to <a href="https://www.youtube.com/@user-boss-unofficial-Aayush" target="_blank">this YouTube channel</a> and subscribe!</p>
+    </div>
+    <script>
+        const magicButton = document.getElementById('magicButton');
+        const audio = document.getElementById('audio');
+        const secondButton = document.getElementById('secondButton');
+        const message = document.getElementById('message');
+        magicButton.addEventListener('click', function() {
+            audio.play();
+            magicButton.style.display = 'none'; // Hide the first button
+            secondButton.style.display = 'block'; // Show the second button
+        });
+        secondButton.addEventListener('click', function() {
+            message.textContent = 'Prank ho gaya / giyan ha ap'; // Display the prank message
+        });
+    </script>
+</body>
+</html>
